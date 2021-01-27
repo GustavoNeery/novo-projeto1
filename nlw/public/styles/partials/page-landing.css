@@ -1,0 +1,159 @@
+
+
+#page-landing{
+    background: var(--color-primary);
+}
+
+#page-landing #container{
+    color: var(--color-text-in-primary);
+}
+
+.logo-container img{
+    height: 10rem;
+}
+
+
+.logo-container{
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.logo-container h2{
+    /*propriedades de texto*/
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+}
+
+.hero-image{
+    width: 100%;
+}
+
+.buttons-container{
+
+    /*o justify-content so funciona em conjunto com o display flex*/
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+.buttons-container a{
+    width: 30rem;
+    height: 10.4rem;
+
+
+    border-radius: 0.8rem;
+    margin-right: 1.6rem; 
+
+    font: 700 2.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    text-decoration: none;
+
+    transition: background 0.2s;
+
+    color: var(--color-button-text)
+/*trasition é um tipo de animação que vc usa no css*/
+/*no nome estudar e dar aulas estava com um underline e para ficar sem usei o text-decoration: none*/    
+/*quando eu quiser fazer posicionamento de elementos dentro de uma caixa eu tenho que usar o display flex*/
+/*2rem in border-radius will be no canto superior esquerdo, 1 rem sera no superior direito e inferior esquerdo
+e o 3rem sera no inferior direito*/
+}
+
+
+.buttons-container a img{
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+
+.buttons-container a.study{
+    background: var(--color-primary-lighter);
+}
+
+.buttons-container a.study:hover{
+    background: var(--color-primary-light);
+
+    /*:hover quer dizer pelo css que as propriedades aqui de dentro serão aplicadas apenas quando o botão estiver no estador hover
+    oque seria hover? é justamente quando passo o MOUSE por cima do botão*/
+}
+
+.buttons-container a.give-classes{
+    background: var(--color-secondary);
+    margin-right: 0;
+}
+
+.buttons-container a.give-classes:hover{
+    background: var(--color-secondary-dark);
+}
+
+.total-connections{
+    font-size: 1.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-connections img{
+    margin-left: 0.8rem;
+}
+
+@media(max-width: 699px){
+    :root{
+        font-size: 40%;
+    }
+}
+
+@media (min-width: 1100px){
+    #page-landing #container{
+        max-width: 1100px;
+        display: grid;
+        /*aqui sao colunas do grid, se não lembrar oque são grid coloco css grid imagens no google*/
+        grid-template-columns: 2fr 1fr 2fr;
+        /*aqui sao linhas*/
+        grid-template-rows: 350px 1fr;
+        grid-template-areas:
+        "proffy image image"
+        "button button texting";
+        column-gap: 87px;
+        row-gap: 86px;
+    }
+
+    .logo-container{
+        grid-area: proffy;
+        text-align: initial;
+        align-self: center;
+        margin: 0;
+    }
+
+    .logo-container img{
+        height: 100%;
+        height: 127px;
+    }
+
+    .hero-image{
+        grid-area: image;
+        height: 350px;
+    }
+
+    .buttons-container{
+        grid-area: button;
+        /*esse justify esta sobrescrevendo o outro que estava justify-content: center*/
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .total-connections{
+        grid-area: texting;
+        justify-self: end;
+        font-size: 1.2rem;
+    }
+
+}
+
+/*@media é uma regra css que sera aplicada apenas quando ele atingir o padrão*/
